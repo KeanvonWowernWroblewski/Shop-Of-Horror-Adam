@@ -2,7 +2,7 @@
 //Skapar en kund som värdena kan sparas i för att spara antal produkter och total summan
 public class Kund {
     private int totalProducts;
-    private float totalSum;
+    private double totalSum; //!!! ändrat till double
     // sätter kundens varukorg till noll för att kunnas adderas med produkter sedan.
     public Kund() {
         this.totalProducts = 0;
@@ -13,12 +13,13 @@ public class Kund {
         return totalProducts;
     }
     //totalSum är satt till float för att inte skapa för många decimaltal
-    public float gettotalSum() {
+    public double gettotalSum() { //!!! ändrat till double
         return (totalSum);
     }
     // Adderar pris och antal varor
-    public void buyproduct(double pris) {
+    //!!! ändrat sätt att få ut infon
+    public void buyProduct(Product product) {
         this.totalProducts++;
-        this.totalSum += pris;
+        this.totalSum += product.getPrice();
     }
 }
